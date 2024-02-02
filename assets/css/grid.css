@@ -69,7 +69,7 @@ class="fw900 fs18 p20 br10 b2"
 */
 
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
-body{overflow-x: hidden;margin:0;line-height: 1.5;font-family: Montserrat;}
+body{overflow-x: hidden;margin:0;line-height: 1.5;font-family: Manrope;}
 a{background-color:transparent;color: inherit;}
 a:active,a:hover{outline:0}
 b,strong{font-weight:700}
@@ -1443,8 +1443,8 @@ li {list-style: none;}
   .lg-pr{position: relative;}
   .lg-ps{position: static;}
 }
-@media (min-width: 1860px) {
-  .container {max-width: 1440px;}
+@media (min-width: 1800px) {
+  .container {max-width: 1770px;}
   .col-xl-1 {-ms-flex: 0 0 8.333333%;flex: 0 0 8.333333%;max-width: 8.333333%;}
   .col-xl-2 {-ms-flex: 0 0 16.666667%;flex: 0 0 16.666667%;max-width: 16.666667%;}
   .col-xl-3 {-ms-flex: 0 0 25%;flex: 0 0 25%;max-width: 25%;}
@@ -1865,3 +1865,9 @@ li {list-style: none;}
 .b4{border: solid 4px;}
 .b5{border: solid 5px;}
 .ovh{overflow:hidden;}
+.w-100{width: 100%;}
+.z-0{z-index: 0;}
+.z-1{z-index: 1;}
+.z-2{z-index: 2;}
+.z-3{z-index: 3;}
+.z-4{z-index: 4;}
