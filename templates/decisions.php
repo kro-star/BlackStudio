@@ -5,7 +5,7 @@
         </div>
         <div class="col-12 col-xl-7 z-3 position-textProject">
             
-            <div class="fw700 fs24 sm-fs40 xl-fs48 c-firstF0 lh40 sm-lh70 pb25">
+            <div class="fw700 fs24 sm-fs40 xl-fs48 c-firstF0 lh40 sm-lh70 pb25" id="decisions">
             Представляем вашему вниманию готовые решения, которые помогли развитию проектов других людей
             </div>
             <div class="c-secondA3 fw500 fs16 sm-fs24 lh39">

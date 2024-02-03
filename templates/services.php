@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row xl-pt100 sm-pt80 pt50">
         <div class="col-12 xl-pt20 ">
-            <div class="fw700 fs36 sm-fs48 xl-fs64 xl-lh95 lh54 c-firstF0">
+            <div class="fw700 fs36 sm-fs48 xl-fs64 xl-lh95 lh54 c-firstF0" id="servises">
             Услуги, которые мы предоставляем:
             </div>
         </div>
@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row pt40">
         <div class="col-12 col-xl-4 mb15 xl-mb25">
-                <div class="br10 b-opasity bg-dark-gray  xl-h217 sm-h178 h157  pt25 pb25 pl20 pr20 xl-pt35 xl-pb35 xl-pr40 xl-pl40">
+                <div class="br10 b-opacity bg-dark-gray  xl-h217 sm-h178 h157  pt25 pb25 pl20 pr20 xl-pt35 xl-pb35 xl-pr40 xl-pl40">
                 <div class="df ai-center  pb20 xl-pb30 ">
                         <div class="fw700 fs16 sm-fs24 lh136 c-firstF0 ">
                         Web-разработка 
@@ -27,7 +27,7 @@
             </div>
 
             <div class="col-12 col-xl-4 mb15 xl-mb25">
-                <div class="br10 b-opasity bg-dark-gray  xl-h217 sm-h178 h157  pt25 pb25 pl20 pr20 xl-pt35 xl-pb35 xl-pr40 xl-pl40">
+                <div class="br10 b-opacity bg-dark-gray  xl-h217 sm-h178 h157  pt25 pb25 pl20 pr20 xl-pt35 xl-pb35 xl-pr40 xl-pl40">
                 <div class="df ai-center  pb20 xl-pb30 ">
                         <div class="fw700 fs16 sm-fs24 lh136 c-firstF0 ">
                         Продвижение 
@@ -42,7 +42,7 @@
 
             </div>
             <div class="col-12 col-xl-4 mb15 xl-mb25">
-                <div class="br10 b-opasity bg-dark-gray  xl-h217 sm-h178 h157 pt25 pb25 pl20 pr20 xl-pt35 xl-pb35 xl-pr40 xl-pl40">
+                <div class="br10 b-opacity bg-dark-gray  xl-h217 sm-h178 h157 pt25 pb25 pl20 pr20 xl-pt35 xl-pb35 xl-pr40 xl-pl40">
                 <div class="df ai-center  pb20 xl-pb30 ">
                         <div class="fw700 fs16 sm-fs24 lh136 c-firstF0 ">
                         Дизайн 
@@ -57,7 +57,7 @@
 
             </div>
             <div class="col-12 col-xl-4 mb15 xl-mb25">
-                <div class="br10 b-opasity bg-dark-gray  xl-h217 sm-h178 h157 pt25 pb25 pl20 pr20 xl-pt35 xl-pb35 xl-pr40 xl-pl40">
+                <div class="br10 b-opacity bg-dark-gray  xl-h217 sm-h178 h157 pt25 pb25 pl20 pr20 xl-pt35 xl-pb35 xl-pr40 xl-pl40">
                 <div class="df ai-center  pb20 xl-pb30 ">
                         <div class="fw700 fs16 sm-fs24 lh136 c-firstF0 ">
                         Поддержка проекта 
@@ -73,7 +73,7 @@
 
             </div>
             <div class="col-12 col-xl-4 mb15 xl-mb25">
-                <div class="br10 b-opasity bg-dark-gray  xl-h217 sm-h178 h157  pt25 pb25 pl20 pr20 xl-pt35 xl-pb35 xl-pr40 xl-pl40">
+                <div class="br10 b-opacity bg-dark-gray  xl-h217 sm-h178 h157  pt25 pb25 pl20 pr20 xl-pt35 xl-pb35 xl-pr40 xl-pl40">
                 <div class="df ai-center  pb20 xl-pb30 ">
                         <div class="fw700 fs16 sm-fs24 lh136 c-firstF0 ">
                         Мобильные приложения 
@@ -88,7 +88,7 @@
 
             </div>
             <div class="col-12 col-xl-4 mb15 xl-mb25">
-                <div class="br10 b-opasity bg-dark-gray  xl-h217 sm-h178 h157 pt25 pb25 pl20 pr20 xl-pt35 xl-pb35 xl-pr40 xl-pl40">
+                <div class="br10 b-opacity bg-dark-gray  xl-h217 sm-h178 h157 pt25 pb25 pl20 pr20 xl-pt35 xl-pb35 xl-pr40 xl-pl40">
                     <div class="df ai-center  pb20 xl-pb30 ">
                         <div class="fw700 fs16 sm-fs24 lh136 c-firstF0 ">
                         Интеграция 

@@ -79,7 +79,7 @@ sup{top:-.5efm}sub{bottom:-.25em}
 hr{box-sizing:content-box;height:1px;border:none;margin: 0;}
 pre{overflow:auto}
 pre{font-family:monospace,monospace;font-size:1em}
-button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}
+button,input,optgroup,select,textarea, option{color:inherit;font:inherit;margin:0}
 button{overflow:visible}
 button,select{text-transform:none}
 button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
