@@ -58,15 +58,12 @@
                     include 'templates/designer.php';
                 ?>
 
-            </div>
-
 
             <?
                 include 'templates/form.php';
             ?>
 
             
-
 
             <div class="vacansies-select pr pb80 sm-pb100 xl-pb50 pt30 sm-pt50">
                 <div class = " w-100 z-3 pa bg-black pt20 pb20 pl30 pr30 br10 pt20 pb20 pl30 pr30 b-opacity  df jc-between cp">

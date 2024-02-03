@@ -82,7 +82,7 @@
     <div class="row">
         <div class="col-12">
             <div class="fs16 sm-fs18 lh136 fw500 c-secondA3">
-                <a href="">Посмотреть все работы</a>
+                <a href="/all-works.php">Посмотреть все работы</a>
             </div>
         </div>
     </div>

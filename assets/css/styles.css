@@ -19,6 +19,12 @@ body{
 input{
     outline: none;
 }
+textarea::placeholder{
+    color: var(--second-text);
+}
+textarea{
+    resize: none;
+}
 .cp{cursor: pointer;}
 .vacansies-list{
     top: 73px;
@@ -66,6 +72,9 @@ input{
 .c-grayED{
     color:var(--light-gray-text);
 }
+.c-grayD9{
+    color: #D9D9D9;
+}
 .c-firstF0{
     color: var(--white-text);
 }
@@ -110,6 +119,12 @@ input{
 }
 .fd-column{
     flex-direction: column;
+}
+.fd-row{
+    flex-direction: row;
+}
+.fd-reserse{
+    flex-direction: column-reverse;
 }
 .position-grad{
     bottom: 0px;
@@ -157,11 +172,17 @@ input{
 .b-opacity{
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
+.b-gray{
+    border: 1px solid var(--second-text);
+}
 .b-bottom{
     border-top: none;
     border-left: none;
     border-right: none;
     border-bottom: 1px solid var(--blue);
+}
+.b-blue{
+    border: 1px solid var(--blue);
 }
 .pt35{padding-top: 35px;}
 .pb35{padding-bottom: 35px;}
@@ -177,6 +198,9 @@ input{
 .h169{
     height: 169px;
 }
+.h211{
+    height: 211px;
+} 
 .h-30{height: 30%;}
 
 
@@ -184,8 +208,13 @@ input{
     flex-direction: column-reverse;
     align-items: center;
 }
+.button-size{
+    width: 100%;
+}
+
 
 @media (min-width: 768px){
+   
     .sm-fd-row{
         flex-direction: row;
     }
@@ -222,6 +251,9 @@ input{
     .sm-h217{
         height: 217px;
     }
+    .sm-h285{
+        height: 285px;
+    }
     .sm-pt35{
         padding-top: 35px;
     } 
@@ -251,6 +283,9 @@ input{
     .xl-h490{
         height: 490px;
     }
+    .xl-h844{
+        height: 844px;
+    } 
     .xl-pt35{
         padding-top: 35px;
     } 
@@ -272,5 +307,12 @@ input{
         position: inherit;
         top: 0;
         left: 0;
+    }
+    
+    .xl-fd-row{
+        flex-direction: row;
+    }
+    .button-size{
+        width: auto;
     }
 }

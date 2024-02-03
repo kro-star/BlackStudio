@@ -2,7 +2,8 @@
     <div class="container">
         <div class="row mt10 xs-mt40">
             <div class="col-12">
-                <nav class="df ac-center jc-between xl-jc-start pt35 pl30 pr30 pb90 sm-pb50 footerNav">
+                <nav class="df ac-center jc-between pt35 pl30 pr30 pb90 sm-pb50 w-100 footerNav">
+                    
                     <div class="df ai-center sm-fd-row fd-column">
                         <div class="fs18 fw800 lh136 mr0 sm-mr40 xl-mr100 c-header pb40" data-id="client"><a href="">Стать клиентом</a></div>
                         <div class="fs18 fw800 lh136 mr0 sm-mr40 xl-mr100 c-header pb40" data-id="services"><a href="">Услуги</a></div>
