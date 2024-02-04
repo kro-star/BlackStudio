@@ -3,7 +3,7 @@
         <div class="row mt10 xs-mt40 z-3 pr">
             <div class="col-12">
                 <div class="df ac-center jc-between xl-jc-start">
-                    <img src="assets/img/logo.png" alt="" class="db xl-mr100">
+                    <img src="assets/img/logo.png" alt="" class="db xl-mr100 sm-h60 h40">
                     <div class="dn xl-df jc-between ac-center w-100">
                         <div class="df ai-center">
                             <div class="fs18 fw800 lh136 mr100 c-header" data-id="client"><a href="">Стать клиентом</a></div>
@@ -19,7 +19,7 @@
                         
                     </div>
                     <div class="xl-dn df ai-center">
-                        <img src="assets/img/menu.png" alt="" class="db">
+                        <img src="assets/img/menu.png" alt="" class="db sm-w48 w32">
                     </div>
 
                     
