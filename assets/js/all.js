@@ -224,3 +224,17 @@ function saveFormDate(){
     $('textarea').value = '';
 
 }
+
+let countFiles = 0;
+let files = {};
+// если есть добавление файлов, логично сделать и их удаление(пока не реализовано)
+$('#file-input').addEventListener('change', () => {
+    const input = $('#file-input');
+    //Здесь нужно сделать проверку на размер файла, но я не знаю какой размер нужно задавать.
+    files.countFiles = input.files[0];
+    console.log(files.countFiles);
+    $('.fileList').innerHTML += files.countFiles.name + '<br/>';
+    countFiles += 1;
+
+
+});

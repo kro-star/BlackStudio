@@ -61,16 +61,23 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12">
-                <div class="mr10 mt40 pr">
-                    <label for="file-input" class=" br10 b-gray fs16 sm-fs18 xl-fs20 fw700 pt15 pb15 pr30 pl30  c-grayD9 bg-black button-size cp">Прикрепить файл</label>
+            <div class="col-xl-4 col-12">
+                <div class="mr10 mt40 pr df">
+                    <label for="file-input" class=" br10 b-gray fs16 sm-fs18 xl-fs20 fw700 pt15 pb15 pr30 pl30  c-grayD9 bg-black button-size cp db">Прикрепить файл</label>
                     <input id="file-input" type="file" name="file" multiple />
-                    
                 
                 </div>
                 <!--<button class="br10 b-gray fs16 sm-fs18 xl-fs20 fw700 pt15 pb15 pr30 pl30 mr10 mt40 c-grayD9 bg-black button-size">
                     Прикрепить файл
                 </button>-->
+            </div>
+            <div class="col-12 col-xl-8">
+                
+                <div class="fs16 df sm-fs18 xl-fs20 fw700 c-firstF0  mr10 mt40 dn">
+                    <div class="h-100">Прикреплённые файлы: </div>
+                    <div class="ml20 fileList">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
