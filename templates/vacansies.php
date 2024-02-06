@@ -57,7 +57,7 @@
                 <?
                     include 'templates/designer.php';
                 ?>
-
+            </div>
 
             <?
                 include 'templates/form.php';

@@ -170,6 +170,28 @@ textarea{
 .inputtext{
 
 }
+button:disabled{
+    background-color: var(--dark-gray);
+    cursor: not-allowed;
+}
+button:disabled:hover{
+    background-color: var(--dark-gray);
+    cursor: not-allowed;
+}
+.button-size:hover{    
+    background-color: var(--ligth-blue);
+}
+
+.button-size:active{    
+    background-color: var(--dark-blue);
+}
+input[type=file] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 1;
+    position: absolute;
+    z-index: -10;
+}
 
 .b-opacity{
     border: 1px solid rgba(255, 255, 255, 0.2);
