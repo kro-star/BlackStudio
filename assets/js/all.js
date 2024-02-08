@@ -1,240 +1,151 @@
-
-const $ = selector =>{
-    return document.querySelector(selector);
-  };
-
-
-function removeError(){
-    if($('.errorMail') != null){
-        $('.errorMail').remove();
+if($('textarea') != null){
+    if(!$('.vacansies-span').classList.contains('dn')){
+        $('.vacansies-span').classList.add('dn');
+    }
+    
+}else{
+    if($('.vacansies-span').classList.contains('dn')){
+        $('.vacansies-span').classList.remove('dn');
     }
 }
-  
-if($('.vacansies-select') != null){
-$('.vacansies-select').addEventListener('click', (e) => {
+if($('.vacansies-chose-container') != null){
+    let vacSelList = document.querySelectorAll('.vacansies-chose-container');
+    for(let item of vacSelList){
 
-    $('.vacansies-list').classList.toggle('dn');
+        item.addEventListener('click', (e) => {
+            let vacanLists = document.querySelectorAll('.vacansies-list');
+            if(e.target.parentElement.parentElement.querySelector('.vacansies-list').classList.contains('dn')){
+                for(let elem of vacanLists){
+                    if(!elem.classList.contains('dn')){
+                        elem.classList.add('dn');
+                    }
+                }
+                e.target.parentElement.parentElement.querySelector('.vacansies-list').classList.remove('dn');
+            }else{
+                e.target.parentElement.parentElement.querySelector('.vacansies-list').classList.add('dn');
+            }
+        
+        if(e.target.parentElement.querySelector('.arrow') != null ){
+            e.target.parentElement.querySelector('.arrow').classList.toggle('turn');
+        }
+        });
+    }
+}
 
-    e.target.parentElement.querySelector('.arrow').classList.toggle('turn');
+let vacansiesItems = document.querySelectorAll('.vacansies-item');
+for(let item of vacansiesItems){
+    item.addEventListener('click', choseVacansies);
+}
 
+function choseVacansies(event){
+  let newClass = "." + event.target.getAttribute('data-id');
+  let vacTextList = document.querySelectorAll('.vacansies-item-text');
+  for(let item of vacTextList){
+    if(!item.classList.contains('dn')){
+        item.classList.add('dn');
+    }
+  }
+  $(newClass).classList.toggle('dn');
+  let vacItemList = document.querySelectorAll('.vacansies-item');
+  for(let item of vacItemList){
+    if(item.classList.contains('active')){
+        item.classList.remove('active');
+    }
+  }
+  let classChoseSelect = '.vacansies-' + event.target.getAttribute('data-id');
+  let choseSelectList = document.querySelectorAll(classChoseSelect);
+  for(let item of choseSelectList){
+    item.classList.add('active');
+  }
+  let vacChoseList = document.querySelectorAll('.vacansies-item-chose');
+  for(let item of vacChoseList){
+    item.textContent = event.target.textContent;
+  }
+  $('.input-vacansies').value = event.target.textContent;
+  event.target.parentElement.parentElement.parentElement.classList.toggle('dn');///очень плохой код, но он работает, поэтому пока оставлю.  .vacansies-list прячет
+        if(event.target.parentElement.parentElement.parentElement.parentElement.querySelector('.arrow') != null ){//стрелку в селекте поворачивает
+            event.target.parentElement.parentElement.parentElement.parentElement.querySelector('.arrow').classList.toggle('turn');
+        }
     
+}
 
+
+
+//из минусов этой функции то, что изменения будут происходить и в header и в footer
+let listPhone = document.querySelectorAll('.phone-img');
+for (let itemPhone of listPhone){  
+    itemPhone.addEventListener('click',() => {
+        let listNumber = document.querySelectorAll('.phone-number');
+        for(let itemNumber of listNumber){
+            itemNumber.classList.toggle('dn');
+        }
     });
 }
 
-//document.addEventListener('DOMContentLoaded', inputFormDate); 
-$('.buttonForm').addEventListener('click', saveFormDate);
-$('.buttonForm').addEventListener('mouseover',() => {
-    if(checkName($('input[name=nameC]').value) && checkEmail($('input[name=email]').value) && checkPhone($('input[name=phone]').value)){
-        $('.buttonForm').removeAttribute('disabled');
+if($('.filter') != null){
+    let filterList = document.querySelectorAll('.filter');
+    for(let filter of filterList){
+        filter.addEventListener('click', clickFilter);
     }
-    if ($('.buttonForm').disabled){
-        $('.errorDisButton').classList.remove('dn');
-    }
-});
-$('input[name=nameC]').addEventListener('focus',  focusName);
-$('input[name=nameC]').addEventListener('input',  (event) =>  {
-    let text = event.target.value;
-    let resultCheck = checkName(text);
-});
-$('input[name=nameC]').addEventListener('blur',  (event) =>  {
-    let text = event.target.value;
-    let resultCheck = checkName(text);
-    if(resultCheck && checkEmail($('input[name=email]').value) && checkPhone($('input[name=phone]').value)){
-        $('.buttonForm').removeAttribute('disabled');
-    }
-});
+}
 
-$('input[name=email]').addEventListener('focus',  focusEmail);
-$('input[name=email]').addEventListener('input',  (event) =>  {
-    
-    if($('label[for=nameC]').value == ''){
-        changeColorLabel('label[for=nameC]', 'c-red');
-    }
-    let text = event.target.value;
-    let resultCheck = checkEmail(text);
-});
-$('input[name=email]').addEventListener('blur',  (event) =>  {
-    
-    let text = event.target.value;
-    let resultCheck = checkEmail(text);
-    if(checkName($('input[name=nameC]').value) && resultCheck && checkPhone($('input[name=phone]').value)){
-        $('.buttonForm').removeAttribute('disabled');
-    }
-});
-$('input[name=phone]').addEventListener('focus',  focusPhone);
-$('input[name=phone]').addEventListener('input', (event) =>  {
-    
-    let text = event.target.value;
-    checkPhone(text);
-    if($('label[for=nameC]').value == ''){
-        changeColorLabel('label[for=nameC]', 'c-red');
-    }
-});
-$('input[name=phone]').addEventListener('blur', (event) =>  {
-   
-    let text = event.target.value;
-    let resultCheck = checkPhone(text);
-    if(checkName($('input[name=nameC]').value) && checkEmail($('input[name=email]').value) && resultCheck){
-        $('.buttonForm').removeAttribute('disabled');
-    }
-});
-
-function changeColorLabel(labelFor,newClass){
-    let label = $(labelFor);
-    if (label.classList.contains('dn')){
-        label.classList.remove('dn');
-    }
-    if(newClass != 'c-blue'){
-        if (label.classList.contains('c-blue')){
-            label.classList.remove('c-blue');
+function clickFilter(e){
+    //нет проверки, что по этому фильтру ничего не нашлось
+    let chosefilterClass = '.' + e.target.getAttribute('data-id');
+    if(chosefilterClass != '.all'){
+        let filterList = document.querySelectorAll('.filter');
+        for(let filter of filterList){
+            if(filter.classList.contains('active')){
+                filter.classList.remove('active');
+            }
+        }
+        e.target.classList.add('active');
+        let chosefilterClass = '.' + e.target.getAttribute('data-id');
+        let choseWorks = document.querySelectorAll(chosefilterClass);
+        let worksList = document.querySelectorAll('.work-item');
+        for(let work of worksList){
+            if(!work.classList.contains('dn')){
+                work.classList.add('dn'); 
+            }
+        }
+        for(let activeWork of choseWorks){
+            activeWork.classList.remove('dn');
+        }
+    }else{
+        let worksList = document.querySelectorAll('.work-item');
+        for(let work of worksList){
+            if(work.classList.contains('dn')){
+                work.classList.remove('dn'); 
+            }
         }   
     }
+}
+
+
+
+
+let imgList = document.querySelectorAll('.work-img');
+for(let img of imgList){
+    img.addEventListener('click', openProject);
+}
+let modal = document.getElementById('myModal');
+function openProject(event){
+    console.log(event.target);
+    let img = event.target.firstElementChild;    
+    let modalImg = document.getElementById("img01");
+    let captionText = document.getElementById("caption");
+    modal.style.display = "block";
+    modalImg.src = img.src;
+    captionText.innerHTML = img.alt;
+}
     
-    if(newClass != 'c-red'){
-        if (label.classList.contains('c-red')){
-            label.classList.remove('c-red');
-        }   
-    }
-    
-    if(newClass != 'c-firstF0'){
-        if (label.classList.contains('c-firstF0')){
-            label.classList.remove('c-firstF0');
-        }   
-    }
-    label.classList.add(newClass);
-};
-
-function focusName(event){
-    removeError();
-    if(!$('.errorDisButton').classList.contains('dn')){
-        $('.errorDisButton').classList.add('dn');
-    }
-    
-    if(event.target.value == ''){
-        changeColorLabel('label[for=nameC]','c-firstF0');
-    }
-    
-}
-function focusEmail(event){
-    removeError();
-    if(!$('.errorDisButton').classList.contains('dn')){
-        $('.errorDisButton').classList.add('dn');
-    }
-    if($('label[for=nameC]').value == ''){
-        changeColorLabel('label[for=nameC]', 'c-red');
-    }
-    if($('input[name=phone]').value == ''){
-        changeColorLabel('label[for=phone]', 'c-red');
-    }
-    if(event.target.value == ''){
-        changeColorLabel('label[for=email]','c-firstF0');
-    }
-    
-}
-
-function focusPhone(event){
-    removeError();
-    if(!$('.errorDisButton').classList.contains('dn')){
-        $('.errorDisButton').classList.add('dn');
-    }
-    if($('input[name=nameC]').value == ''){
-        changeColorLabel('label[for=nameC]', 'c-red');
-    }
-    if(event.target.value == ''){
-        changeColorLabel('label[for=phone]','c-firstF0');
-    }
-    
-}
-function checkName(text){
-    changeColorLabel('label[for=nameC]','c-firstF0');
-    let regex = /[^a-zA-Zа-яА-ЯёЁ\-]+/ ;
-    if (regex.test(text) || text == ''){
-        changeColorLabel('label[for=nameC]','c-red');
-        //здесь так же можно было вывести(доп. div ниже строки ввода), что имя может содержать только русские и латинские буквы и дефис(при указании фамилии)
-        return false;
-    }else{
-        changeColorLabel('label[for=nameC]','c-firstF0');
-        return true;
+let span = $(".close");
+if(span!= null){
+    span.onclick = function() {
+    modal.style.display = "none";
     }
 }
 
-function checkPhone(text){
-    changeColorLabel('label[for=phone]','c-firstF0');
-    let regex = /\d\-\d\d\d\-\d\d\d\-\d\d\-\d\d/ ;/*  \w+@\w+\.\w+*/
-    let regex2 = /\d\d\d\d\d\d\d\d\d\d\d/;
-    //ещё можно предусмотреть ввод городского номера конкретного или не очень региона, а можно при вводе просто цифр делать замену с дефисами.
-    if (!regex.test(text) && !regex2.test(text)){
-        changeColorLabel('label[for=phone]','c-red');
-        //здесь так же можно было вывести(доп. div ниже строки ввода) формат ввода телефона
-        return false;
-    }else{
-        changeColorLabel('label[for=phone]','c-firstF0');
-        return true;
-    }
-}
-
-
-function checkEmail(text){
-    changeColorLabel('label[for=email]','c-firstF0');
-    let regex = /\w+@\w+\.\w+/ ;
-    if (!regex.test(text)){
-        changeColorLabel('label[for=email]','c-red');
-        //здесь так же можно было вывести(доп. div ниже строки ввода) формат e-mail
-        return false;
-    }else{
-        changeColorLabel('label[for=email]','c-firstF0');
-        return true;
-    }
-}
-/*
-function inputFormDate(){
-    if(localStorage.length > 0){
-        $('input[name=nameC]').value = localStorage.getItem('name');
-        if($('input[name=nameC]').value != ''){
-            checkName($('input[name=nameC]').value);
-        }
-        $('input[name=phone]').value = localStorage.getItem('phone');
-        if($('input[name=phone]').value != ''){
-            checkName($('input[name=phone]').value);
-        }
-        $('input[name=email]').value = localStorage.getItem('email');
-        if($('input[name=email]').value != ''){
-            checkName($('input[name=email]').value);
-        }
-        if($('textarea') != null){
-            $('textarea').textContent = localStorage.getItem('text');
-        }
-    }
-    localStorage.clear();
-    if($('errorMail') != null){
-        $('errorMail').remove();
-    }
-}
-*/
-
-function saveFormDate(){
-    /*localStorage.setItem('name', $('input[name=nameC]').value);
-    localStorage.setItem('phone', $('input[name=phone]').value);
-    localStorage.setItem('email', $('input[name=email]').value);
-    localStorage.setItem('text', $('textarea').value);*/ // не нужно сохранять, так как проверка на правильность ввода идёт до отправки формы
-    $('input[name=nameC]').value = '';
-    $('input[name=phone]').value = '';
-    $('input[name=email]').value = '';
-    $('textarea').value = '';
-
-}
-
-let countFiles = 0;
-let files = {};
-// если есть добавление файлов, логично сделать и их удаление(пока не реализовано)
-$('#file-input').addEventListener('change', () => {
-    const input = $('#file-input');
-    //Здесь нужно сделать проверку на размер файла, но я не знаю какой размер нужно задавать.
-    files.countFiles = input.files[0];
-    console.log(files.countFiles);
-    $('.fileList').innerHTML += files.countFiles.name + '<br/>';
-    countFiles += 1;
-
-
+$('.navigate').addEventListener('click', () => {
+    $('.headerNav').classList.toggle('dn');
 });
